@@ -32,6 +32,8 @@
             color: white;
             text-decoration: none;
         }
+
+
     </style>
 
 </head>
@@ -57,13 +59,13 @@
     </div>
 
 
-    <div class="container">
 
         <h1 class="p-3">Lista de Encontros</h1>
 
         <form:form>
 
-            <table class="table table-bordered">
+            <table class="table table-striped">
+              <thead class="thead-dark">
             	<tr>
             		<th>Id</th>
             		<th>Name</th>
@@ -71,10 +73,12 @@
             		<th>observação</th>
             		<th>Url da Imagem</th>
             		<th>Ultima Atualização</th>
+            		<th>Distancia</th>
+            		<th>Preço</th>
             		<th>Edit</th>
             		<th>Delete</th>
             	</tr>
-
+                 </thead>
             	<c:forEach var="e" items="${encontros}">
                     <tr>
                 		<td>${e.encontroId}</td>
@@ -83,6 +87,8 @@
                 		<td>${e.observacao}</td>
                 		<td>${e.urlImagem}</td>
                 		<td><fmt:formatDate pattern="MM/dd/yyyy HH:mm:ss" value="${e.dataCadastro}" /></td>
+                		<td>${e.statusDistancia.descricao}</td>
+                		<td>${e.statusPreco.descricao}</td>
                 		<td><button type="button" class="btn btn-success">
                 		    <a href="/editaEncontro/${e.encontroId}">Editar</a>
                 		</button></td>
@@ -108,7 +114,6 @@
                 	Sortear Encontro
           </button>
           </div>
-    </div>
 
        <script th:inline="javascript">
                    window.onload = function() {

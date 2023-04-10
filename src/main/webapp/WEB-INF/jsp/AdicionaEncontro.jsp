@@ -51,6 +51,28 @@
                   </div>
                  </div>
                  <br>
+                  <div class="form-row">
+              <div class="col">
+                    <label for="StatusPreco">Status da Distancia</label>
+                       <form:select path="statusDistancia.statusDistanciaId" class="form-control">
+                        <option value = "">-Selecione uma Distancia-</option>
+                        <option  value = "1">Perto</option>
+                        <option  value = "2">Medio</option>
+                        <option  value = "3">Distante</option>
+                      </form:select>
+                  </div>
+                   <div class="col">
+                     <label for="StatusPreco">Status do Preço</label>
+                     <form:select path="statusPreco.statusPrecoId" id="StatusPreco" class="form-control">
+                        <option value = "">-Selecione um Preco-</option>
+                        <option value = "1">Barato</option>
+                        <option value = "2">Medio</option>
+                        <option value = "3">Caro</option>
+                     </form:select>
+                  </div>
+                  </div>
+                  <br>
+
                   <div class="row">
                        <button type="submit" class="btn btn-primary">Criar</button>
                   </div>

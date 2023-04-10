@@ -2,6 +2,7 @@ package com.matchMaker.application.Controladores;
 
 import com.matchMaker.application.Modelos.Encontro;
 import com.matchMaker.application.Servicos.EncontroServico;
+import com.matchMaker.application.Servicos.StatusServico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,9 @@ import java.util.Date;
 public class EncontroControlador {
     @Autowired
     EncontroServico encontroServico;
+
+    @Autowired
+    StatusServico statusServico;
     @GetMapping({"/","/listaEncontros"})
     public String listaEncontros(Model model, @ModelAttribute("mensagem") String mensagem){
        model.addAttribute("encontros",encontroServico.listaEncontros());

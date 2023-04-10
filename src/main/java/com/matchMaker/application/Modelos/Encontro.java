@@ -1,8 +1,6 @@
 package com.matchMaker.application.Modelos;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -13,6 +11,13 @@ public class Encontro {
     private String nome;
     private String endereco;
     private String observacao;
+    @ManyToOne
+    @JoinColumn
+    private StatusPreco statusPreco;
+
+    @ManyToOne
+    @JoinColumn
+    private StatusDistancia statusDistancia;
 
     private Date dataCadastro = new Date();
 
@@ -64,5 +69,21 @@ public class Encontro {
 
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+
+    public StatusPreco getStatusPreco() {
+        return statusPreco;
+    }
+
+    public void setStatusPreco(StatusPreco statusPreco) {
+        this.statusPreco = statusPreco;
+    }
+
+    public StatusDistancia getStatusDistancia() {
+        return statusDistancia;
+    }
+
+    public void setStatusDistancia(StatusDistancia statusDistancia) {
+        this.statusDistancia = statusDistancia;
     }
 }
