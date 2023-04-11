@@ -64,7 +64,7 @@
                                       <div class="form-row">
                                       <div class="col">
                                      <label for="StatusPreco">Status da Distancia</label>
-                                     <form:select path="statusDistancia.statusDistanciaId" class="form-control">
+                                     <form:select path="statusDistancia.statusDistanciaId" class="form-control" required="required">
                                           <option value = "">-Selecione uma Distancia-</option>
                                           <option <c:if test = "${encontro.statusDistancia.statusDistanciaId == 1}"> selected</c:if>  value = "1">Perto</option>
                                           <option <c:if test = "${encontro.statusDistancia.statusDistanciaId == 2}"> selected</c:if>  value = "2">Medio</option>
@@ -73,7 +73,7 @@
                                       </div>
                                        <div class="col">
                                            <label for="StatusPreco">Status do Preço</label>
-                                            <form:select path="statusPreco.statusPrecoId" id="StatusPreco" class="form-control">
+                                            <form:select path="statusPreco.statusPrecoId" id="StatusPreco" class="form-control" required="required">
                                               <option  value = "">-Selecione um Preco-</option>
                                               <option  <c:if test = "${encontro.statusPreco.statusPrecoId == 1}"> selected</c:if> value = "1">Barato</option>
                                               <option  <c:if test = "${encontro.statusPreco.statusPrecoId == 2}"> selected</c:if> value = "2">Medio</option>

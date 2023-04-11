@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Calendar;
 import java.util.Date;
 
 @Controller
@@ -34,6 +35,10 @@ public class EncontroControlador {
     }
     @PostMapping("/salvaEncontro")
     public String adicionaEncontro(Encontro encontro, RedirectAttributes redirectAttributes){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.HOUR_OF_DAY, -3);
+        encontro.setDataCadastro(calendar.getTime());
         encontroServico.salvarEAtualizar(encontro);
         redirectAttributes.addFlashAttribute("mensagem","Encontro salvo com sucesso");
         return "redirect:/listaEncontros";
@@ -46,7 +51,10 @@ public class EncontroControlador {
     }
     @PostMapping("/editaEncontro")
     public String atualizaEncontro(Encontro encontro, Model model, RedirectAttributes redirectAttributes){
-        encontro.setDataCadastro(new Date());
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.HOUR_OF_DAY, -3);
+        encontro.setDataCadastro(calendar.getTime());
         encontroServico.salvarEAtualizar(encontro);
         redirectAttributes.addFlashAttribute("mensagem","Encontro editado com sucesso");
         return "redirect:/listaEncontros";
