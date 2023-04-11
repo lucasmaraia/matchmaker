@@ -41,7 +41,7 @@
                <div class="form-row">
                     <div class="col">
                    <label for="observacao">Observacao</label>
-                   <form:input type="text" path="observacao" id="observacao" class="form-control input-sm" required="required" />
+                   <form:input type="text" path="observacao" id="observacao" class="form-control input-sm" />
                    	</div>
                </div>
                 <div class="form-row">
