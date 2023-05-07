@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="container">
+
 
         <h1 class="p-3">Lista de Encontros</h1>
 
@@ -100,18 +100,20 @@
             	</c:forEach>
 
             </table>
-          
-        </form:form>
 
-        <button type="button" class="btn btn-primary">
+        </form:form>
+        <div class="row">
+        <button type="button" class="btn btn-primary btn-block">
         	<a href="/adicionaEncontro">Adicione seu novo Encontro</a>
         </button>
-
-                              
-         <button type="button" onclick = "sorteiaEncontro()" class="btn btn-warning">
+        </div>
+        <br>
+        <br>
+        <div class="row">
+         <button type="button" onclick = "sorteiaEncontro()" class="btn btn-warning btn-block">
                 	Sortear Encontro
           </button>
-        </div>
+          </div>
 
        <script th:inline="javascript">
                    window.onload = function() {
@@ -152,10 +154,6 @@
 
                $('#encontroSorteado').modal('show');
                }
-
-               $('#encontroSorteado').on('hidden.bs.modal', function () {
-                $("#nomeEncontro").empty
-                                });
 
                </script>
 

@@ -35,10 +35,7 @@ public class EncontroControlador {
     }
     @PostMapping("/salvaEncontro")
     public String adicionaEncontro(Encontro encontro, RedirectAttributes redirectAttributes){
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        calendar.add(Calendar.HOUR_OF_DAY, -3);
-        encontro.setDataCadastro(calendar.getTime());
+    	encontro.setDataCadastro(new Date());
         encontroServico.salvarEAtualizar(encontro);
         redirectAttributes.addFlashAttribute("mensagem","Encontro salvo com sucesso");
         return "redirect:/listaEncontros";
@@ -51,10 +48,7 @@ public class EncontroControlador {
     }
     @PostMapping("/editaEncontro")
     public String atualizaEncontro(Encontro encontro, Model model, RedirectAttributes redirectAttributes){
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        calendar.add(Calendar.HOUR_OF_DAY, -3);
-        encontro.setDataCadastro(calendar.getTime());
+        encontro.setDataCadastro(new Date());
         encontroServico.salvarEAtualizar(encontro);
         redirectAttributes.addFlashAttribute("mensagem","Encontro editado com sucesso");
         return "redirect:/listaEncontros";
